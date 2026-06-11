@@ -25,11 +25,19 @@ The analysis is broken down into four core structural sections:
 * Leveraged the **Interquartile Range (IQR) Method** to mathematically define and isolate anomalies within commodity pricing groups.
 * Utilized Seaborn box plots to visually track price spreads across target timelines (2014–2016), highlighting major deviations (such as the March 2016 Bajri price anomaly).
 
+**Price Spread & Outlier Visualizations:**
+![Mandi Price Outliers](./Images/mandi_boxplot.png)
+![Monthly Prices Boxplot](./Images/monthly_prices_boxplot.png)
+
 ### 3. Seasonality Detection & De-seasonalization
 To ensure scalability, a generic framework was constructed and tested against a subset of clusters, including **Ahmednagar, Rahata, and Jamkhed** for primary commodities like **Bajri, Onion, and Capsicum**.
 * **Stationarity Testing**: Applied the **Augmented Dickey-Fuller (ADF) Test** to establish whether time-series trends were stationary or required transformation.
 * **Seasonality Profiling**: Identified both **Multiplicative** (e.g., Bajri in Ahmednagar/Rahata) and **Additive** (e.g., Bajri in Jamkhed) environments.
 * **De-seasonalization**: Cleared out seasonal variances using **Log Transformations** (to convert multiplicative characteristics to additive) followed by **First-Order Differencing (Lag-1)** and **Seasonal-Trend Decomposition (STL)**.
+
+**Time-Series Decomposition & Baseline Trends:**
+![Seasonal Trend Decomposition](./Images/STR_decomposition.png)
+![Price Baseline Comparison](./Images/price_comparison.png)
 
 ### 4. MSP Comparison & Annual Price Fluctuations
 * Compared actual market-driven APMC prices directly against the government's base MSP.
@@ -37,6 +45,10 @@ To ensure scalability, a generic framework was constructed and tested against a 
   * **2014**: Highest variations occurred in **APMC: Rahata** and **Commodity: Capsicum**.
   * **2015**: Highest variations shifted to **APMC: Ahmednagar** and **Commodity: Onion** (driven by major nationwide crop supply deficits).
   * **2016**: Highest variations settled in **APMC: Ahmednagar** and **Commodity: Capsicum**.
+
+**Market Price Volatility Charts:**
+![Onion Price Spikes](./Images/onion_surge.png)
+![2015 APMC Price Fluctuations](./Images/price_fluc_2015_apmc_barplot.png)
 
 ---
 
